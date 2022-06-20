@@ -27,7 +27,8 @@ class Post(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
-                               verbose_name='Автор')  # null=True дает возможность публиковать посты не зарегестрированным пользователям
+                               verbose_name='Автор')  # null=True дает возможность публиковать посты не
+    # зарегестрированным пользователям
     slug = models.SlugField(max_length=200, db_index=True)  # Для большого проекта уникальный слаг не
     # подойдет, из-за большого количества пользователей, но для данных задач - подходит
     likes_post = models.ManyToManyField(User, related_name='like_post', blank=True, verbose_name='Лайкнутые посты')
