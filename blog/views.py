@@ -8,7 +8,8 @@ from .models import Post
 
 class UserPostListView(ListView):
     model = Post
-    template_name = 'blog/user_discussion.html'
+    template_name = 'blog/user_posts.html'
+
     # context_object_name = 'blog_post_user_list'  # Представление_модель_что это
     # queryset = Post.objects.filter(author=2).order_by('-date_created')
     # def get_queryset(self):
@@ -30,7 +31,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
+
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'blog/user_detail_discussion.html'
+    template_name = 'blog/user_detail_post.html'
     context_object_name = 'blog_post_detail'
