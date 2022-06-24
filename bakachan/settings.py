@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     # Мои приложения
     'blog.apps.BlogConfig',
     'discussions.apps.DiscussionsConfig',
-    'forms_app'
+    'forms_app.apps.FormsAppConfig',
 
     # Рекомендуется последней
     'django_cleanup.apps.CleanupConfig',
