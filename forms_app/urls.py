@@ -1,8 +1,8 @@
-from django.urls import path
-from .views import contact_send
+from django.urls import path, re_path
+from .views import manage_authors
 
 
 # path('form/', include('forms_app.urls')),
 urlpatterns = [
-    path('contact/', contact_send, name='contact'),
+    path('', manage_authors, name='create')
 ]
